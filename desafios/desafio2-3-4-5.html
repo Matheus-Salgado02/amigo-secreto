@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let minhaLista=[1,2,3];
+        let minhaLista2=[4,4,5,6];
+
+        let novaLista = minhaLista.concat(minhaLista2);
+        console.log(novaLista);
+        novaLista.pop();
+        console.log(novaLista);
+
+        embaralhar(novaLista);
+        console.log(novaLista);
+
+        let listaSemDuplicata=removerDuplicatas(novaLista);
+        console.log(listaSemDuplicata);
+       
+
+        function embaralhar(lista) 
+        {
+        for (let indice = lista.length; indice; indice--) 
+        {
+            const indiceAleatorio = Math.floor(Math.random() * indice);
+            [lista[indice - 1], lista[indiceAleatorio]] = [lista[indiceAleatorio], lista[indice - 1]];
+            }
+        }
+
+        function removerDuplicatas(lista)
+        {
+           
+            return [...new Set(lista)];
+
+        }
+
+
+    </script>
+
+</body>
+</html>
